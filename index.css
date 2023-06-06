@@ -280,3 +280,21 @@ select {
 .tab-list {
 	--gap: 2rem;
 }
+
+.dot-indicators > * {
+	cursor: pointer;
+	border: none;
+	border-radius: 50%;
+	aspect-ratio: 1;
+	padding: 0.5rem;
+	background-color: hsl(var(--clr-white) / 0.2);
+}
+
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+	background-color: hsl(var(--clr-white) / 0.5);
+}
+
+.dot-indicators > [aria-selected="true"] {
+	background-color: hsl(var(--clr-white));
+}
