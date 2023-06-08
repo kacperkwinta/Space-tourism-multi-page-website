@@ -8,12 +8,12 @@
 	--clr-white: 0 0% 100%;
 
 	/* font-sizes */
-	--fs-900: 9.375rem;
-	--fs-800: 6.25rem;
-	--fs-700: 3.5rem;
-	--fs-600: 2rem;
+	--fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+	--fs-800: 3.5rem;
+	--fs-700: 1.5rem;
+	--fs-600: 1rem;
 	--fs-500: 1.75rem;
-	--fs-400: 1.125rem;
+	--fs-400: 0.9375rem;
 	--fs-300: 1rem;
 	--fs-200: 0.875rem;
 
@@ -21,6 +21,28 @@
 	--ff-serif: "Bellefair", serif;
 	--ff-sans-cond: "Barlow Condensed", sans-serif;
 	--ff-sans-normal: "Barlow", sans-serif;
+}
+
+@media (min-width: 35em) {
+	:root {
+		/* font-sizes */
+		:root {
+			--fs-800: 5rem;
+			--fs-700: 2.5rem;
+			--fs-600: 1.5rem;
+			--fs-400: 1rem;
+		}
+	}
+}
+
+@media (min-width: 45em) {
+	:root {
+		/* font-sizes */
+		--fs-800: 6.25rem;
+		--fs-700: 3.5rem;
+		--fs-600: 2rem;
+		--fs-400: 1.125rem;
+	}
 }
 
 /* ------------------- */
@@ -41,6 +63,9 @@ body {
 	color: hsl(var(--clr-white));
 	line-height: 1.5;
 	min-height: 100vh;
+
+	display: grid;
+	grid-template-rows: min-content 1fr;
 }
 
 img,
@@ -81,6 +106,10 @@ select {
 /* ------------------- */
 /* Utility classes     */
 /* ------------------- */
+.d-block {
+	display: block;
+}
+
 .flex {
 	display: flex;
 	gap: var(--gap, 1rem);
@@ -91,7 +120,7 @@ select {
 	gap: var(--gap, 1rem);
 }
 
-.flow > *:not(:first-child) {
+.flow > *:where:not(:first-child) {
 	margin-top: var(--flow-space, 1rem);
 }
 
@@ -99,6 +128,46 @@ select {
 	padding-inline: 2em;
 	margin-inline: auto;
 	max-width: 80rem;
+}
+
+.grid-container {
+	text-align: center;
+	border: 3px solid yellowgreen;
+	padding: 0 1rem;
+
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+
+.grid-container * {
+	max-width: 50ch;
+}
+
+@media (min-width: 45em) {
+	.grid-container {
+		text-align: left;
+		column-gap: var(--container-gap, 2rem);
+		grid-template-columns: minmax(1rem, 1fr) minmax(0, 80rem) minmax(0, 80rem) minmax(
+				1rem,
+				1fr
+			);
+	}
+
+	.grid-container > *:first-child {
+		grid-column: 2;
+		outline: 2px solid red;
+	}
+
+	.grid-container > *:last-child {
+		grid-column: 3;
+		outline: 2px solid rgb(0, 17, 255);
+	}
+
+	.grid-container--home {
+		padding-bottom: 6rem;
+		align-items: end;
+	}
 }
 
 .sr-only {
@@ -109,7 +178,8 @@ select {
 	margin: -1px;
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
-	white-space: nowrap; /* added line */
+	white-space: nowrap;
+	/* added line */
 	border: 0;
 }
 
@@ -131,9 +201,11 @@ select {
 .text-dark {
 	color: hsl(var(--clr-dark));
 }
+
 .text-accent {
 	color: hsl(var(--clr-light));
 }
+
 .text-white {
 	color: hsl(var(--clr-white));
 }
@@ -144,9 +216,11 @@ select {
 .ff-serif {
 	font-family: var(--ff-serif);
 }
+
 .ff-sans-cond {
 	font-family: var(--ff-sans-cond);
 }
+
 .ff-sans-normal {
 	font-family: var(--ff-sans-normal);
 }
@@ -154,9 +228,11 @@ select {
 .letter-spacing-1 {
 	letter-spacing: 4.75px;
 }
+
 .letter-spacing-2 {
 	letter-spacing: 2.7px;
 }
+
 .letter-spacing-3 {
 	letter-spacing: 2.35px;
 }
@@ -168,24 +244,31 @@ select {
 .fs-900 {
 	font-size: var(--fs-900);
 }
+
 .fs-800 {
 	font-size: var(--fs-800);
 }
+
 .fs-700 {
 	font-size: var(--fs-700);
 }
+
 .fs-600 {
 	font-size: var(--fs-600);
 }
+
 .fs-500 {
 	font-size: var(--fs-500);
 }
+
 .fs-400 {
 	font-size: var(--fs-400);
 }
+
 .fs-300 {
 	font-size: var(--fs-300);
 }
+
 .fs-200 {
 	font-size: var(--fs-200);
 }
@@ -215,7 +298,6 @@ select {
 /* ------------------- */
 .large-button {
 	display: flex;
-	width: fit-content;
 	align-items: center;
 	justify-content: center;
 	padding: 0 2em;
@@ -224,6 +306,7 @@ select {
 	border-radius: 50%;
 	text-decoration: none;
 	position: relative;
+	font-size: 2rem;
 }
 
 .large-button::after {
@@ -329,4 +412,29 @@ select {
 .number-buttons > *:hover,
 .number-buttons > *:focus {
 	border: 1px solid hsl(var(--clr-white));
+}
+
+/* ---------------------- */
+/* Page specific bgs      */
+/* ---------------------- */
+body {
+	background-size: cover;
+	background-position: bottom center;
+}
+
+/* home */
+.home {
+	background-image: url(./assets/home/background-home-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+	.home {
+		background-image: url(./assets/home/background-home-tablet.jpg);
+	}
+}
+
+@media (min-width: 45em) {
+	.home {
+		background-image: url(./assets/home/background-home-desktop.jpg);
+	}
 }
