@@ -25,6 +25,7 @@
 
 @media (min-width: 35em) {
 	:root {
+
 		/* font-sizes */
 		:root {
 			--fs-800: 5rem;
@@ -95,6 +96,7 @@ select {
 
 /* remove animations for people who've turned them off */
 @media (prefers-reduced-motion: reduce) {
+
 	*,
 	*::before,
 	*::after {
@@ -122,7 +124,7 @@ select {
 	gap: var(--gap, 1rem);
 }
 
-.flow > *:where:not(:first-child) {
+.flow>*:where:not(:first-child) {
 	margin-top: var(--flow-space, 1rem);
 }
 
@@ -150,25 +152,22 @@ select {
 	.grid-container {
 		text-align: left;
 		column-gap: var(--container-gap, 2rem);
-		grid-template-columns: minmax(1rem, 1fr) minmax(0, 80rem) minmax(0, 80rem) minmax(
-				1rem,
-				1fr
-			);
+		grid-template-columns: minmax(1rem, 1fr) minmax(0, 80rem) minmax(0, 80rem) minmax(1rem,
+				1fr);
 	}
 
-	.grid-container > *:first-child {
+	.grid-container>*:first-child {
 		grid-column: 2;
 		/* outline: 2px solid red; */
 	}
 
-	.grid-container > *:last-child {
+	.grid-container>*:last-child {
 		grid-column: 3;
 		/* outline: 2px solid rgb(0, 17, 255); */
 	}
 
 	.grid-container--home {
 		padding-bottom: 6rem;
-		align-items: end;
 	}
 }
 
@@ -374,7 +373,8 @@ select {
 		position: fixed;
 		z-index: 100;
 
-		inset: 0 0 0 30%; /* top bottom left right */
+		inset: 0 0 0 30%;
+		/* top bottom left right */
 		list-style: none;
 		flex-direction: column;
 		padding: 6rem 2rem;
@@ -386,7 +386,7 @@ select {
 		transform: translateX(0);
 	}
 
-	.primary-navigation.underline-indicators > .active {
+	.primary-navigation.underline-indicators>.active {
 		border: none;
 	}
 
@@ -423,7 +423,7 @@ select {
 }
 
 @media (min-width: 35em) and (max-width: 45em) {
-	.primary-navigation a > span {
+	.primary-navigation a>span {
 		display: none;
 	}
 }
@@ -449,20 +449,20 @@ select {
 	}
 }
 
-.underline-indicators > * {
+.underline-indicators>* {
 	cursor: pointer;
 	padding: var(--underline-gap, 1rem) 0;
 	border: none;
 	border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
 }
 
-.underline-indicators > *:hover,
-.underline-indicators > *:focus {
+.underline-indicators>*:hover,
+.underline-indicators>*:focus {
 	border-color: hsl(var(--clr-white) / 0.25);
 }
 
-.underline-indicators > .active,
-.underline-indicators > [aria-selected="true"] {
+.underline-indicators>.active,
+.underline-indicators>[aria-selected="true"] {
 	color: hsl(var(--clr-white));
 	border-color: hsl(var(--clr-white));
 }
@@ -471,7 +471,7 @@ select {
 	--gap: 2rem;
 }
 
-.dot-indicators > * {
+.dot-indicators>* {
 	cursor: pointer;
 	border: none;
 	border-radius: 50%;
@@ -480,12 +480,12 @@ select {
 	background-color: hsl(var(--clr-white) / 0.2);
 }
 
-.dot-indicators > *:hover,
-.dot-indicators > *:focus {
+.dot-indicators>*:hover,
+.dot-indicators>*:focus {
 	background-color: hsl(var(--clr-white) / 0.5);
 }
 
-.dot-indicators > [aria-selected="true"] {
+.dot-indicators>[aria-selected="true"] {
 	background-color: hsl(var(--clr-white));
 }
 
@@ -493,7 +493,7 @@ select {
 	flex-direction: column;
 }
 
-.number-buttons > * {
+.number-buttons>* {
 	display: block;
 	cursor: pointer;
 	width: 5rem;
@@ -510,13 +510,13 @@ select {
 	justify-content: center;
 }
 
-.number-buttons > [aria-selected="true"] {
+.number-buttons>[aria-selected="true"] {
 	background-color: hsl(var(--clr-white));
 	color: hsl(var(--clr-dark));
 }
 
-.number-buttons > *:hover,
-.number-buttons > *:focus {
+.number-buttons>*:hover,
+.number-buttons>*:focus {
 	border: 1px solid hsl(var(--clr-white));
 }
 

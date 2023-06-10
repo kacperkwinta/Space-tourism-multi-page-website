@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="./assets/favicon-32x32.png"
-		/>
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
 
 		<title>Frontend Mentor | Space tourism website</title>
 		<!-- Google fonts -->
@@ -17,8 +13,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
+			rel="stylesheet" />
 		<!-- CSS -->
 		<link rel="stylesheet" href="index.css" />
 	</head>
@@ -26,11 +21,7 @@
 	<body class="home">
 		<header class="primary-header flex">
 			<div>
-				<img
-					src="assets/shared/logo.svg"
-					alt="space tourism logo"
-					class="logo"
-				/>
+				<img src="assets/shared/logo.svg" alt="space tourism logo" class="logo" />
 			</div>
 
 			<button class="mobile-nav-toggle" aria-controls="primary-navigation">
@@ -38,44 +29,28 @@
 			</button>
 
 			<nav>
-				<ul
-					id="primary-navigation"
-					class="primary-navigation flex underline-indicators"
-					data-visible="false"
-				>
+				<ul id="primary-navigation" class="primary-navigation flex underline-indicators" data-visible="false">
 					<li class="active">
-						<a
-							class="ff-sans-cond uppercase text-white letter-spacing-2"
-							href="index.html"
-							><span>00</span>Home</a
-						>
+						<a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span
+								aria-hidden="true">00</span>Home</a>
 					</li>
 					<li class="">
-						<a
-							class="ff-sans-cond uppercase text-white letter-spacing-2"
-							href="destination.html"
-							><span>01</span>Active</a
-						>
+						<a class="ff-sans-cond uppercase text-white letter-spacing-2" href="destination.html"><span
+								aria-hidden="true">01</span>Destination</a>
 					</li>
 					<li>
-						<a
-							class="ff-sans-cond uppercase text-white letter-spacing-2"
-							href="#"
-							><span>02</span>Hovered</a
-						>
+						<a class="ff-sans-cond uppercase text-white letter-spacing-2" href="#"><span
+								aria-hidden="true">02</span>Crew</a>
 					</li>
 					<li>
-						<a
-							class="ff-sans-cond uppercase text-white letter-spacing-2"
-							href="#"
-							><span>03</span>Idle</a
-						>
+						<a class="ff-sans-cond uppercase text-white letter-spacing-2" href="#"><span
+								aria-hidden="true">03</span>Technology</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
 
-		<div class="grid-container grid-container--home">
+		<main class="grid-container grid-container--home">
 			<div>
 				<h1 class="text-accent uppercase ff-sans-cond fs-500 letter-spacing-1">
 					So, you want to travel to
@@ -91,12 +66,11 @@
 			</div>
 
 			<div>
-				<a href="#" class="large-button uppercase ff-serif text-dark bg-white"
-					>Explore</a
-				>
+				<a href="#" class="large-button uppercase ff-serif text-dark bg-white">Explore</a>
 			</div>
-		</div>
+		</main>
 
 		<script src="index.js"></script>
 	</body>
+
 </html>
