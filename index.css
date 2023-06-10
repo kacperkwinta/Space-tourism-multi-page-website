@@ -158,12 +158,12 @@ select {
 
 	.grid-container > *:first-child {
 		grid-column: 2;
-		outline: 2px solid red;
+		/* outline: 2px solid red; */
 	}
 
 	.grid-container > *:last-child {
 		grid-column: 3;
-		outline: 2px solid rgb(0, 17, 255);
+		/* outline: 2px solid rgb(0, 17, 255); */
 	}
 
 	.grid-container--home {
@@ -335,7 +335,7 @@ select {
 }
 
 .logo {
-	margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+	margin: 1.5rem;
 	width: fit-content;
 }
 
@@ -416,13 +416,36 @@ select {
 	}
 }
 
-@media (min-width: 35em) and (max-width: 45em) {
+@media (min-width: 35em) {
 	.primary-navigation {
-		padding: 0 3rem;
+		padding: 0 2rem;
 	}
+}
 
+@media (min-width: 35em) and (max-width: 45em) {
 	.primary-navigation a > span {
 		display: none;
+	}
+}
+
+@media (min-width: 45em) {
+	.primary-header::after {
+		content: "";
+		display: block;
+		position: relative;
+		height: 1px;
+		width: 100%;
+		margin-right: -4rem;
+		background-color: hsl(var(--clr-white) / 0.25);
+		order: 1;
+	}
+
+	nav {
+		order: 2;
+	}
+
+	.primary-navigation {
+		margin: 2rem;
 	}
 }
 
